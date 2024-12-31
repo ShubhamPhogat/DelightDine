@@ -1,0 +1,22 @@
+# Exclude node_modules and build artifacts
+node_modules
+client/node_modules
+server/node_modules
+server/functions/node_modules
+
+
+# Exclude logs and temporary files
+*.log
+*.tmp
+
+# Exclude environment and sensitive files (if using environment variables)
+.env
+.env.local
+
+# Exclude version control files
+.git
+.gitignore
+
+# Exclude Docker artifacts
+Dockerfile
+.dockerignore
