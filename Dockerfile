@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies for the entire project
-RUN npm install
+
 
 # Copy all project files into the container
 COPY . .
@@ -18,13 +18,13 @@ RUN npm install -g firebase-tools
 
 # Change to the client directory and install frontend dependencies
 WORKDIR /app/client
-RUN npm install
-RUN npm run build
+RUN npm install --force
+# RUN npm run build
 
 # Move back to the root directory
 WORKDIR /app
 
-WORKDIR /app/client/functions
+WORKDIR /app/server/functions
 RUN npm install
 
 # Expose ports for frontend (3000) and backend (5001)
